@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="교사 AI 역량 자기효능감 척도(TAICS) 24문항에 응답하고 6개 영역 결과를 바로 확인합니다. 응답은 기기에만 저장됩니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TAICS 교사 AI 역량 자기진단">
+<meta property="og:description" content="24문항 · 6개 영역 · 약 3분. 응답은 내 기기에만 저장됩니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+<title>TAICS 교사 AI 역량 자기진단</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ground:#EDF2EE;
+  --sheet:#FAFCF9;
+  --ink:#16201B;
+  --ink-2:#4B5850;
+  --ink-3:#65716A;
+  --on-ink:#FAFCF9;
+  --accent:#2A7350;
+  --on-accent:#FFFFFF;
+  --form:#2A7350;
+  --form-line:#9FC4AE;
+  --form-tint:#E5F1E9;
+  --band:#DCE4DE;
+  --ref:#16201B;
+  --grid:#E0E8E2;
+  --sheet-shadow:0 1px 2px rgba(20,50,35,.05),0 14px 36px -12px rgba(20,50,35,.14);
+  --f-display:"Hahmlet","Nanum Myeongjo","AppleMyungjo","Batang",serif;
+  --f-sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#0E1411;
+    --sheet:#161D19;
+    --ink:#E6EEE8;
+    --ink-2:#AAB8AF;
+    --ink-3:#85938A;
+    --on-ink:#161D19;
+    --accent:#5DBB8A;
+    --on-accent:#0F1512;
+    --form:#6CC697;
+    --form-line:#3F6651;
+    --form-tint:#1B2720;
+    --band:#2C3630;
+    --ref:#E6EEE8;
+    --grid:#26312B;
+    --sheet-shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#0E1411;
+  --sheet:#161D19;
+  --ink:#E6EEE8;
+  --ink-2:#AAB8AF;
+  --ink-3:#85938A;
+  --on-ink:#161D19;
+  --accent:#5DBB8A;
+  --on-accent:#0F1512;
+  --form:#6CC697;
+  --form-line:#3F6651;
+  --form-tint:#1B2720;
+  --band:#2C3630;
+  --ref:#E6EEE8;
+  --grid:#26312B;
+  --sheet-shadow:none;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--f-sans);font-size:16px;line-height:1.6;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+
+.wrap{max-width:720px;margin:0 auto;padding:28px 20px 12px}
+.sheet{background:var(--sheet);border:1px solid var(--grid);border-radius:14px;box-shadow:var(--sheet-shadow)}
+.pad{padding-inline:clamp(18px,5vw,40px)}
+@media (max-width:600px){
+  .wrap{padding:0}
+  .sheet{border-radius:0;border-width:0 0 1px;box-shadow:none}
+}
+
+/* ---------- intro ---------- */
+.intro{padding-top:clamp(28px,6vw,46px);padding-bottom:26px;display:grid;gap:18px}
+.eyebrow{margin:0;font-family:var(--f-mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--form)}
+h1{margin:0;font-family:var(--f-display);font-weight:700;font-size:clamp(29px,7.2vw,40px);line-height:1.22;letter-spacing:-.01em}
+.lede{margin:0;font-size:17px;color:var(--ink-2);max-width:34em}
+.lede strong{color:var(--ink);font-weight:600}
+
+.fields{margin:0;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--form-line);border-radius:6px}
+.fields div{padding:7px 12px 9px;border-left:1px solid var(--form-line);min-width:0}
+.fields div:first-child{border-left:0}
+.fields dt{font-size:11.5px;color:var(--form);letter-spacing:.02em}
+.fields dd{margin:0;font-size:18px;font-weight:600;line-height:1.35;white-space:nowrap}
+
+.howto{background:var(--form-tint);border-radius:10px;padding:16px 18px 14px;display:grid;gap:14px}
+.howto p{margin:0;font-size:15px}
+.scale-key{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:440px}
+.scale-key li{display:grid;justify-items:center;gap:5px;font-size:12px;line-height:1.35;color:var(--ink-2);text-align:center}
+
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-2);cursor:pointer;justify-self:start}
+.switch input{appearance:none;-webkit-appearance:none;margin:0;width:34px;height:20px;border-radius:999px;background:var(--form-line);position:relative;cursor:pointer;transition:background .15s;flex:none}
+.switch input::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--sheet);transition:transform .15s}
+.switch input:checked{background:var(--accent)}
+.switch input:checked::after{transform:translateX(14px)}
+.switch input:focus-visible{outline:2px solid var(--form);outline-offset:2px}
+
+.intro-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between;font-size:13.5px;color:var(--ink-3)}
+.intro-foot p{margin:0}
+.linkbtn{background:none;border:0;padding:4px 0;color:var(--form);font-weight:500;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linkbtn:focus-visible{outline:2px solid var(--form);outline-offset:2px;border-radius:3px}
+
+/* ---------- timing-mark progress bar ---------- */
+.tbar{position:sticky;top:0;z-index:10;background:var(--sheet);border-block:1px solid var(--grid);display:flex;align-items:center;gap:14px;padding-block:7px}
+.marks{flex:1;min-width:0;display:flex;gap:8px}
+.mgroup{flex:1;min-width:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0 3px;padding:5px 0 3px;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mgroup:focus-visible{outline:2px solid var(--form);outline-offset:2px;border-radius:3px}
+.m{height:13px;border:1.25px solid var(--form-line);border-radius:1.5px;transition:background .15s,border-color .15s}
+.m.on{background:var(--accent);border-color:var(--accent)}
+.mlabel{grid-column:1/-1;margin-top:4px;font-family:var(--f-mono);font-size:9.5px;font-weight:500;letter-spacing:.06em;line-height:1.2;color:var(--ink-3);text-align:left}
+.mgroup.done .mlabel{color:var(--ink)}
+.tcount{font-family:var(--f-mono);font-size:13px;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tcount b{color:var(--ink);font-weight:600}
+.tgo{appearance:none;border:0;background:var(--accent);color:var(--on-accent);font-size:13.5px;font-weight:600;padding:8px 12px;border-radius:8px;white-space:nowrap;cursor:pointer}
+.tgo:focus-visible{outline:2px solid var(--form);outline-offset:2px}
+
+/* ---------- sections & items ---------- */
+.sec{padding-top:38px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;padding-bottom:14px;border-bottom:2px solid var(--form);scroll-margin-top:72px}
+.sec-code{grid-row:span 2;margin-top:4px;font-family:var(--f-mono);font-weight:600;font-size:13px;letter-spacing:.08em;color:var(--form);border:1.5px solid var(--form);border-radius:4px;padding:3px 7px}
+.sec-head h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:21px;line-height:1.35}
+.sec-head h2 .en-name{font-family:var(--f-sans);font-weight:400;font-size:13px;color:var(--ink-3);margin-left:8px;letter-spacing:0}
+.sec-desc{margin:0;font-size:14px;color:var(--ink-2)}
+
+.item{padding:20px 0 18px;border-bottom:1px solid var(--grid);scroll-margin-top:84px}
+.item:last-child{border-bottom:0}
+.stmt{margin:0;font-size:17px;line-height:1.6}
+.icode{display:inline-block;margin-right:8px;padding:0 5px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.04em;line-height:1.65;color:var(--form);border:1px solid var(--form-line);border-radius:3px;vertical-align:2px;transition:color .15s,border-color .15s}
+.item.answered .icode{color:var(--ink-3);border-color:var(--grid)}
+.en{display:none;margin:4px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-3)}
+.show-en .en{display:block}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:14px;max-width:440px}
+.opt{position:relative;display:grid;justify-items:center;align-content:start;gap:6px;padding:4px 0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.opt input{position:absolute;top:0;left:50%;width:1px;height:1px;opacity:0;margin:0;pointer-events:none}
+.bubble{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--form-line);display:grid;place-items:center;font-family:var(--f-mono);font-size:15px;font-weight:500;color:var(--form);transition:background .14s,border-color .14s,color .14s}
+.bubble.sm{width:26px;height:26px;font-size:12px;border-width:1.25px}
+.opt:hover .bubble{border-color:var(--form)}
+.opt input:checked + .bubble{background:var(--accent);border-color:var(--accent);color:var(--on-accent);animation:mark .2s ease-out}
+.opt input:focus-visible + .bubble{outline:2px solid var(--form);outline-offset:3px}
+.anchor{font-size:11.5px;line-height:1.3;color:var(--ink-3);text-align:center}
+.opt input:checked ~ .anchor{color:var(--ink);font-weight:500}
+@keyframes mark{from{transform:scale(.84)}to{transform:scale(1)}}
+.item.flash{animation:flash 1.4s ease-out}
+@keyframes flash{0%,35%{background:var(--form-tint)}100%{background:transparent}}
+
+.submit{padding-block:34px 44px;display:grid;justify-items:center;gap:10px;text-align:center;border-top:1px solid var(--grid)}
+.cta{appearance:none;border:0;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:17px;padding:15px 28px;border-radius:10px;min-width:230px;cursor:pointer}
+.cta.pending{background:transparent;color:var(--form);box-shadow:inset 0 0 0 1.5px var(--form)}
+.cta:focus-visible{outline:2px solid var(--form);outline-offset:3px}
+.cta-note{margin:0;font-size:13.5px;color:var(--ink-3)}
+
+/* ---------- results ---------- */
+.ex-banner{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;background:var(--form-tint);border-bottom:1px solid var(--form-line);border-radius:14px 14px 0 0;padding-block:12px;font-size:14px}
+@media (max-width:600px){.ex-banner{border-radius:0}}
+.r-head{padding-top:clamp(28px,6vw,44px);display:grid;gap:10px}
+.r-meta{margin:0;font-family:var(--f-mono);font-size:12px;color:var(--ink-3)}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;gap:6px 22px;padding-block:20px 26px;border-bottom:1px solid var(--grid)}
+.hero-num{margin:0;font-weight:600;font-size:64px;line-height:1;letter-spacing:-.02em}
+.hero-num .of{font-size:20px;font-weight:500;color:var(--ink-3);margin-left:6px;letter-spacing:0}
+.hero-cap{margin:0 0 5px;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.r-h2{margin:0;font-family:var(--f-display);font-weight:600;font-size:20px;line-height:1.35}
+
+.chart-sec{padding-block:26px 28px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin:10px 0 20px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw-bar{display:inline-block;width:18px;height:10px;background:var(--accent);border-radius:0 3px 3px 0}
+.sw-ref{display:inline-block;position:relative;width:22px;height:14px;background:var(--band)}
+.sw-ref::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:2px;margin-left:-1px;background:var(--ref)}
+.chart{position:relative}
+.rows{display:grid;gap:16px}
+.row{display:grid;gap:7px;border-radius:4px}
+.row:focus-visible{outline:2px solid var(--form);outline-offset:5px}
+.row-head{display:flex;align-items:baseline;gap:8px}
+.row-code{flex:none;width:34px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--form)}
+.row-name{flex:1;min-width:0;font-size:15px;font-weight:500}
+.row-val{flex:none;width:44px;text-align:right;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.row-diff{flex:none;width:58px;text-align:right;font-family:var(--f-mono);font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.col-head{margin-bottom:10px;font-size:11.5px;color:var(--ink-3)}
+.col-head .row-name,.col-head .row-val{font-size:11.5px;font-weight:400;color:var(--ink-3)}
+.col-head .row-diff{font-family:var(--f-sans);font-size:11.5px}
+.track{position:relative;height:26px}
+.track .band{position:absolute;top:0;bottom:0;background:var(--band)}
+.track .gl{position:absolute;inset:0;background:linear-gradient(to right,var(--grid) 1px,transparent 1px) 0 0/25% 100% repeat-x;box-shadow:inset -1px 0 0 var(--grid)}
+.track .bar{position:absolute;left:0;top:6px;height:14px;width:0;min-width:3px;background:var(--accent);border-radius:0 4px 4px 0;transition:width .75s cubic-bezier(.2,.7,.2,1)}
+.track .mean{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:var(--ref);box-shadow:0 0 0 1.5px var(--sheet)}
+.axis{position:relative;height:16px;margin-top:10px;font-family:var(--f-mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.axis span{position:absolute;top:0;transform:translateX(-50%)}
+.axis span:first-child{transform:none}
+.axis span:last-child{transform:translateX(-100%)}
+.axis-cap{margin:14px 0 0;font-size:12.5px;line-height:1.55;color:var(--ink-3)}
+.tip{position:absolute;z-index:3;pointer-events:none;background:var(--ink);color:var(--on-ink);font-size:12.5px;line-height:1.5;padding:7px 10px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0;transition:opacity .12s}
+.tip.show{opacity:1}
+.tip b{font-weight:600}
+
+.tableview{margin-top:14px}
+.tableview summary{cursor:pointer;font-size:13.5px;color:var(--ink-2);width:max-content}
+.tableview summary:focus-visible{outline:2px solid var(--form);outline-offset:2px;border-radius:3px}
+.tablewrap{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;min-width:400px;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid)}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:500;font-size:12.5px;color:var(--ink-3)}
+
+.reflect{padding-block:26px 28px;border-top:1px solid var(--grid);display:grid;gap:16px}
+.cards{display:grid;gap:12px}
+@media (min-width:600px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--form-line);border-radius:10px;padding:16px 18px 18px;display:grid;gap:6px;align-content:start}
+.card p{margin:0}
+.card-k{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--form)}
+.card-name{margin:0;font-family:var(--f-display);font-weight:600;font-size:20px;line-height:1.4}
+.card-name .sc{font-family:var(--f-sans);font-size:15px;font-weight:500;color:var(--ink-2);margin-left:6px;font-variant-numeric:tabular-nums}
+.card-qk{margin-top:6px!important;font-size:11.5px;color:var(--ink-3)}
+.card-q{font-size:15px}
+
+.review{padding-block:26px 20px;border-top:1px solid var(--grid)}
+.review h2{margin-bottom:8px}
+.review details{border-bottom:1px solid var(--grid)}
+.review details:last-child{border-bottom:0}
+.review summary{display:flex;align-items:center;gap:10px;padding:13px 0;cursor:pointer;list-style:none;font-size:15px;font-weight:500}
+.review summary::-webkit-details-marker{display:none}
+.review summary::after{content:"";flex:none;width:7px;height:7px;margin:0 4px 3px 10px;border-right:1.5px solid var(--ink-3);border-bottom:1.5px solid var(--ink-3);transform:rotate(45deg);transition:transform .15s}
+.review details[open] summary::after{transform:rotate(-135deg);margin-bottom:-3px}
+.review summary:focus-visible{outline:2px solid var(--form);outline-offset:2px;border-radius:3px}
+.rv-sc{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:600}
+.rv-list{list-style:none;margin:0 0 12px;padding:0}
+.rv-item{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--grid)}
+.rv-st{margin:0;font-size:14.5px;line-height:1.55}
+.mini{display:flex;align-items:center;gap:3px;padding-top:3px}
+.mini i{display:block;width:12px;height:12px;border-radius:50%;border:1px solid var(--form-line)}
+.mini i.on{background:var(--accent);border-color:var(--accent)}
+.mini b{margin-left:6px;width:10px;font-family:var(--f-mono);font-size:13px;font-weight:600}
+
+.r-actions{display:flex;flex-wrap:wrap;gap:10px;padding-block:22px 8px;border-top:1px solid var(--grid)}
+.btn{appearance:none;border:0;border-radius:10px;padding:12px 18px;font-weight:600;font-size:15px;cursor:pointer;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--form-line)}
+.btn:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ink{background:var(--accent);color:var(--on-accent);box-shadow:none}
+.btn-ink:hover{box-shadow:none}
+.btn-sm{padding:8px 14px;font-size:14px;border-radius:8px}
+.btn.armed{color:var(--form);box-shadow:inset 0 0 0 1.5px var(--form)}
+.btn:focus-visible{outline:2px solid var(--form);outline-offset:3px}
+.r-note{margin:0;padding-block:14px 30px;font-size:13.5px;line-height:1.65;color:var(--ink-2)}
+
+/* ---------- colophon ---------- */
+.colophon{max-width:720px;margin:0 auto;padding:20px clamp(18px,5vw,40px) 44px;font-size:12.5px;line-height:1.65;color:var(--ink-3);display:grid;gap:6px}
+.colophon p{margin:0}
+.colophon a{color:var(--ink-2);text-underline-offset:2px}
+.colophon cite{font-style:normal}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap" lang="ko">
+  <main>
+    <div class="sheet" id="sheet-view">
+      <header class="intro pad">
+        <p class="eyebrow">TAICS · Teacher AI Competence Self-efficacy Scale</p>
+        <h1>교사 AI 역량 자기효능감 척도</h1>
+        <p class="lede">AI를 수업에 쓰는 일에 대해 <strong>내가 스스로 얼마나 해낼 수 있다고 믿는지</strong>를 여섯 영역, 24개 문장으로 살펴봅니다.</p>
+        <dl class="fields">
+          <div><dt>문항</dt><dd>24</dd></div>
+          <div><dt>영역</dt><dd>6</dd></div>
+          <div><dt>척도</dt><dd>5점</dd></div>
+          <div><dt>소요</dt><dd>약 3분</dd></div>
+        </dl>
+        <div class="howto">
+          <p>각 문장이 지금의 나와 얼마나 가까운지 하나를 고르세요. 정답도, 좋은 점수도 없습니다.</p>
+          <ol class="scale-key" aria-label="응답 척도">
+            <li><span class="bubble sm" aria-hidden="true">1</span>전혀 그렇지 않다</li>
+            <li><span class="bubble sm" aria-hidden="true">2</span>그렇지 않다</li>
+            <li><span class="bubble sm" aria-hidden="true">3</span>보통이다</li>
+            <li><span class="bubble sm" aria-hidden="true">4</span>그렇다</li>
+            <li><span class="bubble sm" aria-hidden="true">5</span>매우 그렇다</li>
+          </ol>
+          <label class="switch"><input type="checkbox" id="en-toggle"> 영어 원문 함께 보기</label>
+        </div>
+        <div class="intro-foot">
+          <p>응답은 이 기기의 브라우저에만 저장되며, 발표자를 포함해 어디에도 전송되지 않습니다.</p>
+          <button type="button" class="linkbtn" id="example-btn">예시 결과 미리보기</button>
+        </div>
+      </header>
+
+      <div class="tbar pad" id="tbar">
+        <div class="marks" id="marks"></div>
+        <div class="tcount" id="tcount" aria-live="polite"><b>0</b>/24</div>
+        <button type="button" class="tgo" id="tgo" hidden>결과 보기</button>
+      </div>
+
+      <div id="sections"></div>
+
+      <div class="submit pad">
+        <button type="button" class="cta pending" id="cta">남은 24문항으로 이동</button>
+        <p class="cta-note" id="cta-note">아직 고르지 않은 첫 문항으로 이동합니다.</p>
+      </div>
+    </div>
+
+    <div class="sheet" id="result-view" hidden></div>
+  </main>
+
+  <footer class="colophon">
+    <p>문항 출처 · <cite>Chiu, T. K. F., Ahmad, Z., &amp; Çoban, M. (2025). Development and validation of teacher artificial intelligence (AI) competence self-efficacy (TAICS) scale. <i>Education and Information Technologies, 30</i>, 6667–6685.</cite> <a href="https://doi.org/10.1007/s10639-024-13094-z" target="_blank" rel="noopener">doi.org/10.1007/s10639-024-13094-z</a></p>
+    <p>원 논문은 CC BY 4.0으로 공개되어 있습니다. 한국어 문항은 강연용으로 옮긴 비공식 번역이며, 한국어판으로 따로 타당화되지 않았습니다. 비교 값은 논문 Table 2의 홍콩 K–12 교사 434명 영역별 평균·표준편차입니다.</p>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const SCALE = [
+    [1, '전혀 그렇지 않다', '전혀 아니다'],
+    [2, '그렇지 않다', '아니다'],
+    [3, '보통이다', '보통'],
+    [4, '그렇다', '그렇다'],
+    [5, '매우 그렇다', '매우 그렇다']
+  ];
+
+  // m, sd: Table 2 (N = 434 Hong Kong K-12 teachers)
+  const DIMS = [
+    { code: 'AIK', ko: 'AI 지식', en: 'AI knowledge', m: 3.13, sd: 0.95,
+      desc: 'AI 기반 도구를 알아보고, AI로 콘텐츠를 만들며, 과업에 맞는 도구를 고르는 능력',
+      q: '최근 수업 준비에 쓴 도구 중 AI 기반인 것과 아닌 것을 하나씩 떠올려 보세요. 무엇이 둘을 가르나요?',
+      items: [
+        ['AIK1', '나는 어떤 도구가 AI 기반인지 아닌지 구별할 수 있다.', 'I can distinguish whether a tool is AI-based or not.'],
+        ['AIK2', '나는 AI로 콘텐츠를 만들 수 있다.', 'I can create content with AI.'],
+        ['AIK3', '나는 AI가 무엇인지 설명할 수 있다.', 'I can explain what AI is.'],
+        ['AIK4', '나는 과업을 효과적으로 해내기 위해 알맞은 AI 도구를 고르는 방법을 안다.', 'I know how to choose the right AI tools to effectively complete a task.']
+      ] },
+    { code: 'AIP', ko: 'AI 교수법', en: 'AI pedagogy', m: 3.15, sd: 0.98,
+      desc: '교과 내용·AI 도구·교수 방법을 결합해 수업을 설계하고, 동료의 설계를 돕는 능력',
+      q: '다음 주 수업 하나를 골라 보세요. AI 도구가 가르칠 내용, 가르치는 방식, 학생의 배움 중 어디를 바꿀 수 있을까요?',
+      items: [
+        ['AIP1', '나는 내가 가르치는 내용과 방식, 학생이 배우는 것을 향상시키는 AI 도구를 골라 수업에 쓸 수 있다.', 'I can choose an AI tool to use in my classroom that enhances what I teach, how I teach, and what students learn.'],
+        ['AIP2', '나는 수업에서 내 교과 내용을 더 풍부하게 하는 AI 도구를 고를 수 있다.', 'I can choose an AI tool that enhances my teaching subject content for a lesson.'],
+        ['AIP3', '나는 교과 내용, AI 도구, 교수 방법을 적절히 결합한 수업을 할 수 있다.', 'I can teach lessons that appropriately combine my teaching subject, AI tools, and teaching approaches.'],
+        ['AIP4', '나는 다른 교사가 교과 내용, AI 도구, 교수 방법을 조화롭게 활용하도록 도울 수 있다.', 'I can help others coordinate the use of subject content, AI tools, and teaching approaches.']
+      ] },
+    { code: 'AIA', ko: 'AI 평가', en: 'AI assessment', m: 3.18, sd: 0.92,
+      desc: 'AI를 활용해 학습을 위한 평가를 설계하고, 학생의 자기평가를 지원하는 능력',
+      q: '학생이 AI와 함께 만든 결과물을 평가한다면, 어떤 기준을 새로 세워야 할까요?',
+      items: [
+        ['AIA1', '나는 AI 도구를 활용해 학습을 위한 평가(assessment for learning)를 촉진할 수 있다.', 'I can use AI tool to foster assessment for learning.'],
+        ['AIA2', '나는 AI 기반 환경(예: ChatGPT와 함께하는 학습)에서 학생의 학습을 향상시키는 평가 방식을 설계할 수 있다.', 'I can design an assessment approach to improve student learning in an AI-based environment (e.g., learning with ChatGPT).'],
+        ['AIA3', '나는 AI 기반 환경에서 학생의 학습을 평가할 수 있다.', 'I can assess student learning in an AI-based environment.'],
+        ['AIA4', '나는 학생의 자기평가를 촉진하는 AI 도구를 고를 수 있다.', 'I can choose an AI tool to foster student self-assessment.']
+      ] },
+    { code: 'AIE', ko: 'AI 윤리', en: 'AI ethics', m: 3.09, sd: 0.89,
+      desc: '민감한 정보를 보호하고, 학생에게 안전하고 책임 있는 AI 사용을 가르치는 능력',
+      q: '우리 반 정보 중 AI 도구에 입력하면 안 되는 것은 무엇인가요? 학생들에게는 어떻게 알려 주고 있나요?',
+      items: [
+        ['AIE1', '나는 학생들에게 윤리를 가르칠 수 있다.', 'I can teach students ethics.'],
+        ['AIE2', '나는 민감한 정보(예: 시험, 학생 성적과 개인정보)를 AI 도구로부터 보호할 수 있다.', 'I can protect sensitive content from AI tools (e.g., exams, students’ grades and personal data).'],
+        ['AIE3', '나는 AI 도구를 쓰는 동안 나의 건강과 웰빙을 지킬 수 있다.', 'I can ensure my health and well-being while using AI tools.'],
+        ['AIE4', '나는 AI 도구로 학습할 때 안전하고 책임 있게 행동하는 방법을 학생들에게 가르친다.', 'I teach students how to behave safely and responsibly when learning with AI tools.']
+      ] },
+    { code: 'HCE', ko: '인간 중심 교육', en: 'Human-centred education', m: 3.03, sd: 0.96,
+      desc: 'AI 도구의 이점과 위험을 판단하고, 편향과 사회적 영향을 인간의 책임으로 바라보는 능력',
+      q: '지금 가장 자주 쓰는 AI 도구 하나를 떠올려, 그 이점과 위험을 한 가지씩 적어 보세요.',
+      items: [
+        ['HCE1', '나는 AI 도구의 이점을 평가할 수 있다.', 'I can assess the benefits of an AI tool.'],
+        ['HCE2', '나는 AI 도구의 위험을 평가할 수 있다.', 'I can assess the risks of an AI tool.'],
+        ['HCE3', '나는 AI의 편향에 대한 책임이 인간에게 있음을 인식한다.', 'I recognise human is responsible for AI bias.'],
+        ['HCE4', '나는 AI가 우리 사회에 어떤 영향을 미치는지 설명할 수 있다.', 'I can explain how AI impact our society.']
+      ] },
+    { code: 'PEN', ko: '전문적 참여', en: 'Professional engagement', m: 2.99, sd: 1.00,
+      desc: 'AI 도구를 탐색하고, 전문성 개발에 참여하며, 경험을 동료와 나누는 태도',
+      q: '이번 연수에서 알게 된 것 중 동료 한 명에게 꼭 나누고 싶은 것은 무엇인가요?',
+      items: [
+        ['PEN1', '나는 다양한 웹사이트와 검색 전략을 활용해 여러 AI 도구를 찾고 고를 수 있다.', 'I can use different websites and search strategies to find and select a range of different AI tools.'],
+        ['PEN2', '나는 소속 기관 밖에서 지속적인 전문성 개발 활동을 적극적으로 찾는다.', 'I actively look for continuous professional development activities outside my educational organization.'],
+        ['PEN3', '나는 기관 안팎의 동료들과 AI 수업 경험을 적극적으로 나눈다.', 'I actively share my AI teaching experience with other colleagues within and outside my educational organization.'],
+        ['PEN4', '나는 동료가 AI를 활용한 학습 활동을 설계하도록 돕는 것을 좋아한다.', 'I love to help my colleagues design learning activities with AI.']
+      ] }
+  ];
+
+  const ALL = DIMS.flatMap(d => d.items.map(([code, ko, en]) => ({ dim: d.code, code, ko, en })));
+  const TOTAL = ALL.length;
+  const REF_OVERALL = DIMS.reduce((a, d) => a + d.m, 0) / DIMS.length;
+  const EXAMPLE = {
+    AIK1: 4, AIK2: 4, AIK3: 4, AIK4: 3, AIP1: 4, AIP2: 3, AIP3: 4, AIP4: 3,
+    AIA1: 3, AIA2: 3, AIA3: 3, AIA4: 2, AIE1: 4, AIE2: 5, AIE3: 4, AIE4: 4,
+    HCE1: 4, HCE2: 4, HCE3: 4, HCE4: 3, PEN1: 3, PEN2: 2, PEN3: 3, PEN4: 2
+  };
+
+  const KEY = 'taics-ko-v1';
+  const reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const $ = (s, r = document) => r.querySelector(s);
+  const f2 = v => v.toFixed(2);
+  const pct = v => ((Math.min(5, Math.max(1, v)) - 1) / 4 * 100).toFixed(2) + '%';
+  const signed = v => {
+    const r = Math.round(v * 100) / 100;
+    return r > 0 ? '+' + r.toFixed(2) : r < 0 ? '−' + Math.abs(r).toFixed(2) : '±0.00';
+  };
+
+  function load() {
+    const base = { answers: {}, en: false, view: 'sheet', doneAt: null };
+    try {
+      const s = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (s && typeof s === 'object') {
+        const answers = {};
+        ALL.forEach(({ code }) => {
+          const v = s.answers && s.answers[code];
+          if (Number.isInteger(v) && v >= 1 && v <= 5) answers[code] = v;
+        });
+        return { answers, en: !!s.en, view: s.view === 'result' ? 'result' : 'sheet', doneAt: s.doneAt || null };
+      }
+    } catch (e) {}
+    return base;
+  }
+  let state = load();
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  const answeredCount = () => ALL.filter(it => state.answers[it.code]).length;
+
+  const sheetEl = $('#sheet-view');
+  const resultEl = $('#result-view');
+  const marksEl = $('#marks');
+  const countEl = $('#tcount');
+  const tgoEl = $('#tgo');
+  const cta = $('#cta');
+  const ctaNote = $('#cta-note');
+  const enToggle = $('#en-toggle');
+
+  function goTo(el, block = 'center') {
+    if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block });
+  }
+
+  /* ---------- build the sheet ---------- */
+  $('#sections').innerHTML = DIMS.map(d => `
+    <section class="sec pad" id="sec-${d.code}" aria-labelledby="h-${d.code}">
+      <header class="sec-head">
+        <span class="sec-code">${d.code}</span>
+        <h2 id="h-${d.code}">${d.ko}<span class="en-name" lang="en">${d.en}</span></h2>
+        <p class="sec-desc">${d.desc}</p>
+      </header>
+      ${d.items.map(([c, ko, en]) => `
+      <div class="item" id="item-${c}">
+        <p class="stmt" id="st-${c}"><span class="icode">${c}</span>${ko}</p>
+        <p class="en" lang="en">${en}</p>
+        <div class="scale" role="radiogroup" aria-labelledby="st-${c}">
+          ${SCALE.map(([v, full, short]) => `
+          <label class="opt"><input type="radio" name="${c}" value="${v}" aria-label="${v}, ${full}"><span class="bubble" aria-hidden="true">${v}</span><span class="anchor" aria-hidden="true">${short}</span></label>`).join('')}
+        </div>
+      </div>`).join('')}
+    </section>`).join('');
+
+  marksEl.innerHTML = DIMS.map(d => `
+    <button type="button" class="mgroup" data-dim="${d.code}" aria-label="${d.ko} 영역으로 이동">${d.items.map(() => '<span class="m"></span>').join('')}<span class="mlabel">${d.code}</span></button>`).join('');
+
+  Object.entries(state.answers).forEach(([c, v]) => {
+    const input = $(`input[name="${c}"][value="${v}"]`);
+    if (input) input.checked = true;
+    const item = $('#item-' + c);
+    if (item) item.classList.add('answered');
+  });
+
+  enToggle.checked = state.en;
+  document.body.classList.toggle('show-en', state.en);
+  enToggle.addEventListener('change', () => {
+    state.en = enToggle.checked;
+    document.body.classList.toggle('show-en', state.en);
+    save();
+  });
+
+  function updateProgress() {
+    const n = answeredCount();
+    DIMS.forEach(d => {
+      const g = marksEl.querySelector(`[data-dim="${d.code}"]`);
+      d.items.forEach(([c], i) => g.children[i].classList.toggle('on', !!state.answers[c]));
+      g.classList.toggle('done', d.items.every(([c]) => state.answers[c]));
+    });
+    countEl.innerHTML = `<b>${n}</b>/${TOTAL}`;
+    const done = n === TOTAL;
+    countEl.hidden = done;
+    tgoEl.hidden = !done;
+    cta.classList.toggle('pending', !done);
+    cta.textContent = done ? '결과 보기' : `남은 ${TOTAL - n}문항으로 이동`;
+    ctaNote.textContent = done ? '24문항에 모두 답했습니다. 응답은 결과를 본 뒤에도 고칠 수 있습니다.' : '아직 고르지 않은 첫 문항으로 이동합니다.';
+  }
+  updateProgress();
+
+  sheetEl.addEventListener('change', e => {
+    const t = e.target;
+    if (t.type !== 'radio') return;
+    const first = !state.answers[t.name];
+    state.answers[t.name] = Number(t.value);
+    $('#item-' + t.name).classList.add('answered');
+    const complete = answeredCount() === TOTAL;
+    if (complete && !state.doneAt) state.doneAt = Date.now();
+    save();
+    updateProgress();
+    if (!first) return;
+    if (complete) { setTimeout(() => goTo(cta), 220); return; }
+    const i = ALL.findIndex(it => it.code === t.name);
+    const next = ALL[i + 1];
+    if (!next || state.answers[next.code]) return;
+    const el = $('#item-' + next.code);
+    const r = el.getBoundingClientRect();
+    if (r.bottom > window.innerHeight - 12) setTimeout(() => goTo(el), 200);
+  });
+
+  marksEl.addEventListener('click', e => {
+    const g = e.target.closest('.mgroup');
+    if (g) goTo($('#sec-' + g.dataset.dim), 'start');
+  });
+
+  function flashMissing() {
+    const miss = ALL.find(it => !state.answers[it.code]);
+    if (!miss) return false;
+    const el = $('#item-' + miss.code);
+    goTo(el);
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+    const input = el.querySelector('input');
+    if (input) input.focus({ preventScroll: true });
+    return true;
+  }
+  cta.addEventListener('click', () => { if (!flashMissing()) showResult(false); });
+  tgoEl.addEventListener('click', () => showResult(false));
+  $('#example-btn').addEventListener('click', () => showResult(true));
+
+  /* ---------- results ---------- */
+  let resetTimer = null;
+
+  function showSheet() {
+    resultEl.hidden = true;
+    resultEl.innerHTML = '';
+    sheetEl.hidden = false;
+    state.view = 'sheet';
+    save();
+    window.scrollTo(0, 0);
+  }
+
+  function showResult(example) {
+    const ans = example ? EXAMPLE : state.answers;
+    const sc = DIMS.map(d => Object.assign({}, d, { s: d.items.reduce((a, [c]) => a + ans[c], 0) / d.items.length }));
+    const overall = ALL.reduce((a, it) => a + ans[it.code], 0) / TOTAL;
+    const max = Math.max(...sc.map(d => d.s));
+    const min = Math.min(...sc.map(d => d.s));
+    const tops = sc.filter(d => d.s === max);
+    const lows = sc.filter(d => d.s === min);
+    const when = !example && state.doneAt
+      ? new Date(state.doneAt).toLocaleString('ko-KR', { dateStyle: 'medium', timeStyle: 'short' })
+      : '';
+    const who = example ? '예시' : '나';
+
+    const cards = max === min
+      ? `<div class="cards">
+          <article class="card">
+            <p class="card-k">여섯 영역 점수가 모두 같습니다</p>
+            <h3 class="card-name">모든 영역 <span class="sc">${f2(max)}</span></h3>
+            <p class="card-qk">생각해 볼 질문</p>
+            <p class="card-q">여섯 영역 중 다음 학기에 가장 먼저 키우고 싶은 곳은 어디인가요? 그 이유는 무엇인가요?</p>
+          </article>
+        </div>`
+      : `<div class="cards two">
+          <article class="card">
+            <p class="card-k">가장 높은 영역</p>
+            <h3 class="card-name">${tops.map(d => d.ko).join(' · ')} <span class="sc">${f2(max)}</span></h3>
+            <p class="card-qk">생각해 볼 질문</p>
+            <p class="card-q">이 영역에서 내가 해 온 일 가운데, 동료에게 소개할 만한 사례는 무엇인가요?</p>
+          </article>
+          <article class="card">
+            <p class="card-k">가장 낮은 영역</p>
+            <h3 class="card-name">${lows.map(d => d.ko).join(' · ')} <span class="sc">${f2(min)}</span></h3>
+            <p class="card-qk">생각해 볼 질문</p>
+            <p class="card-q">${lows[0].q}</p>
+          </article>
+        </div>`;
+
+    resultEl.innerHTML = `
+      ${example ? `<div class="ex-banner pad"><span>예시 응답으로 만든 화면입니다. 실제 결과가 아닙니다.</span><button type="button" class="btn btn-ink btn-sm" data-act="sheet">직접 응답하기</button></div>` : ''}
+      <header class="r-head pad">
+        <p class="eyebrow">TAICS 결과</p>
+        <h1>${example ? '예시 프로필' : '나의 AI 역량 프로필'}</h1>
+        <p class="r-meta">${example ? '예시 응답 24문항' : `24문항 응답${when ? ' · ' + when : ''}`}</p>
+      </header>
+
+      <section class="hero pad" aria-label="전체 평균">
+        <p class="hero-num"><span>${f2(overall)}</span><span class="of">/ 5</span></p>
+        <p class="hero-cap">24문항 전체 평균<br>참고: 홍콩 K–12 교사 434명 평균 ${f2(REF_OVERALL)}</p>
+      </section>
+
+      <section class="chart-sec pad" aria-labelledby="h-chart">
+        <h2 class="r-h2" id="h-chart">영역별 점수</h2>
+        <div class="legend">
+          <span><i class="sw-bar" aria-hidden="true"></i>${example ? '예시 점수' : '나의 점수'}</span>
+          <span><i class="sw-ref" aria-hidden="true"></i>홍콩 교사 평균 · 음영은 ±1 표준편차</span>
+        </div>
+        <div class="chart" id="chart">
+          <div class="row-head col-head" aria-hidden="true"><span class="row-code"></span><span class="row-name">영역</span><span class="row-val">점수</span><span class="row-diff">평균과 차이</span></div>
+          <div class="rows">
+            ${sc.map((d, i) => {
+              const lo = Math.max(1, d.m - d.sd), hi = Math.min(5, d.m + d.sd);
+              return `
+            <div class="row" tabindex="0" data-i="${i}" aria-label="${d.ko} ${f2(d.s)}점. 홍콩 교사 평균 ${f2(d.m)}점, 표준편차 ${f2(d.sd)}, 차이 ${signed(d.s - d.m)}">
+              <div class="row-head"><span class="row-code">${d.code}</span><span class="row-name">${d.ko}</span><span class="row-val">${f2(d.s)}</span><span class="row-diff">${signed(d.s - d.m)}</span></div>
+              <div class="track" aria-hidden="true">
+                <span class="band" style="left:${pct(lo)};width:${((hi - lo) / 4 * 100).toFixed(2)}%"></span>
+                <span class="gl"></span>
+                <span class="bar" data-w="${pct(d.s)}" style="transition-delay:${i * 60}ms"></span>
+                <span class="mean" style="left:${pct(d.m)}"></span>
+              </div>
+            </div>`;
+            }).join('')}
+          </div>
+          <div class="axis" aria-hidden="true">${[1, 2, 3, 4, 5].map(v => `<span style="left:${pct(v)}">${v}</span>`).join('')}</div>
+          <div class="tip" id="tip" aria-hidden="true"></div>
+        </div>
+        <p class="axis-cap">1 전혀 그렇지 않다 · 3 보통이다 · 5 매우 그렇다. 진한 세로선은 홍콩 K–12 교사 434명의 영역 평균, 음영은 평균 ±1 표준편차 범위입니다.</p>
+        <details class="tableview">
+          <summary>표로 보기</summary>
+          <div class="tablewrap">
+            <table>
+              <thead><tr><th scope="col">영역</th><th scope="col">${who}</th><th scope="col">홍콩 평균</th><th scope="col">표준편차</th><th scope="col">차이</th></tr></thead>
+              <tbody>
+                ${sc.map(d => `<tr><td>${d.ko} (${d.code})</td><td>${f2(d.s)}</td><td>${f2(d.m)}</td><td>${f2(d.sd)}</td><td>${signed(d.s - d.m)}</td></tr>`).join('')}
+                <tr><td>전체 24문항</td><td>${f2(overall)}</td><td>${f2(REF_OVERALL)}</td><td>–</td><td>${signed(overall - REF_OVERALL)}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section class="reflect pad" aria-labelledby="h-reflect">
+        <h2 class="r-h2" id="h-reflect">돌아보기</h2>
+        ${cards}
+      </section>
+
+      <section class="review pad" aria-labelledby="h-review">
+        <h2 class="r-h2" id="h-review">문항별 응답</h2>
+        ${sc.map(d => `
+        <details>
+          <summary><span class="row-code">${d.code}</span><span>${d.ko}</span><span class="rv-sc">${f2(d.s)}</span></summary>
+          <ul class="rv-list">
+            ${d.items.map(([c, ko]) => `
+            <li class="rv-item">
+              <p class="rv-st"><span class="icode">${c}</span>${ko}</p>
+              <span class="mini" role="img" aria-label="${ans[c]}점, ${SCALE[ans[c] - 1][1]}">${[1, 2, 3, 4, 5].map(v => `<i class="${v === ans[c] ? 'on' : ''}"></i>`).join('')}<b>${ans[c]}</b></span>
+            </li>`).join('')}
+          </ul>
+        </details>`).join('')}
+      </section>
+
+      <div class="r-actions pad">
+        ${example
+          ? `<button type="button" class="btn btn-ink" data-act="sheet">직접 응답하기</button>`
+          : `<button type="button" class="btn" data-act="sheet">응답 수정하기</button><button type="button" class="btn" data-act="reset">처음부터 다시</button>`}
+      </div>
+      <p class="r-note pad">이 점수는 시험 점수가 아니라, 각 영역을 스스로 얼마나 해낼 수 있다고 믿는지(자기효능감)를 나타냅니다. 비교선은 홍콩 교사 집단의 값이라 한국 교사의 기준이 아니므로 참고로만 보세요.${example ? '' : ' 결과는 이 기기에 남아 있어 페이지를 다시 열어도 볼 수 있습니다. 필요하면 화면을 캡처해 두세요.'}</p>`;
+
+    sheetEl.hidden = true;
+    resultEl.hidden = false;
+    if (!example) { state.view = 'result'; save(); }
+    window.scrollTo(0, 0);
+
+    const bars = resultEl.querySelectorAll('.bar');
+    requestAnimationFrame(() => requestAnimationFrame(() => bars.forEach(b => { b.style.width = b.dataset.w; })));
+
+    const chart = $('#chart', resultEl);
+    const tip = $('#tip', resultEl);
+    const showTip = row => {
+      const d = sc[row.dataset.i];
+      tip.innerHTML = `<b>${d.ko}</b> ${who} ${f2(d.s)}<br>홍콩 평균 ${f2(d.m)} · 표준편차 ${f2(d.sd)}`;
+      const cr = chart.getBoundingClientRect();
+      const tr = row.querySelector('.track').getBoundingClientRect();
+      const half = tip.offsetWidth / 2 + 4;
+      const x = Math.max(half, Math.min(cr.width - half, tr.left - cr.left + tr.width * (d.s - 1) / 4));
+      tip.style.left = x + 'px';
+      tip.style.top = (tr.top - cr.top - 6) + 'px';
+      tip.classList.add('show');
+    };
+    const hideTip = () => tip.classList.remove('show');
+    chart.addEventListener('pointerover', e => { const row = e.target.closest('.row'); if (row) showTip(row); });
+    chart.addEventListener('pointerleave', hideTip);
+    chart.addEventListener('focusin', e => { const row = e.target.closest('.row'); if (row) showTip(row); });
+    chart.addEventListener('focusout', hideTip);
+  }
+
+  document.addEventListener('pointerdown', e => {
+    const tip = $('#tip');
+    if (tip && !e.target.closest('#chart')) tip.classList.remove('show');
+  });
+
+  resultEl.addEventListener('click', e => {
+    const btn = e.target.closest('[data-act]');
+    if (!btn) return;
+    if (btn.dataset.act === 'sheet') { showSheet(); return; }
+    if (btn.dataset.act === 'reset') {
+      if (!btn.classList.contains('armed')) {
+        btn.classList.add('armed');
+        btn.textContent = '한 번 더 누르면 응답이 모두 지워집니다';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => { btn.classList.remove('armed'); btn.textContent = '처음부터 다시'; }, 4000);
+        return;
+      }
+      clearTimeout(resetTimer);
+      state.answers = {};
+      state.doneAt = null;
+      sheetEl.querySelectorAll('input[type=radio]').forEach(i => { i.checked = false; });
+      sheetEl.querySelectorAll('.item').forEach(i => i.classList.remove('answered'));
+      updateProgress();
+      showSheet();
+    }
+  });
+
+  if (state.view === 'result' && answeredCount() === TOTAL) showResult(false);
+})();
+</script>
+</body>
+</html>
