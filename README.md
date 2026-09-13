@@ -4,8 +4,8 @@
 
 | 척도 | 대상 | 구성 | 바로 가기 |
 |---|---|---|---|
-| **TAICS** 교사 AI 역량 자기효능감 척도 | 초·중등 교사 | 6개 영역 24문항 | [교사용 열기](https://superbobby.github.io/scles/taics/) |
-| **SAICS** 학생 AI 역량 자기효능감 척도 | 학생 (초등 고학년용 표현) | 8개 영역 32문항 | [학생용 열기](https://superbobby.github.io/scles/saics/) |
+| **TAICS** 교사 AI 역량 자기효능감 척도 | 초·중등 교사 | 6개 영역 24문항 | [교사용 열기](https://superbobby.github.io/scales/taics/) |
+| **SAICS** 학생 AI 역량 자기효능감 척도 | 학생 (초등 고학년용 표현) | 8개 영역 32문항 | [학생용 열기](https://superbobby.github.io/scales/saics/) |
 
 ## 공통 사항
 
